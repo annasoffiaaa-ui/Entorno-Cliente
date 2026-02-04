@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de móviles - Scraping</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { border-bottom: 2px solid #ccc; }
+        button { cursor: pointer; margin: 5px 0; }
+        .mobile { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        pre { background: #f4f4f4; padding: 10px; }
+    </style>
+</head>
+<body>
+
+<h1> Catálogo de móviles </h1>
+
+<h2> Interfaz interactiva</h2>
+<div id="interface"></div>
+
+<h2> Árbol de nodos</h2>
+<pre id="tree"></pre>
+
+<h2> Texto plano</h2>
+<pre id="text"></pre>
+
+<script>
+/* ================= PETICIÓN CLIENTE → DATOS ================= */
+fetch('moviles.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log("Respuesta del servidor:", data); // 👈 para enseñar B3
+        renderInterface(data);
+        renderTree(data);
+        renderText(data);
+    })
+    .catch(error => console.error("Error:", error));
+
+/* ================= FUNCIONES ================= */
+
+// 1️⃣ Interfaz
+function renderInterface(mobiles) {
+    const container = document.getElementById("interface");
+
+    mobiles.forEach(m => {
+        const div = document.createElement("div");
+        div.className = "mobile";
+
+        const btn = document.createElement("button");
+        btn.textContent = m.name;
+
+        const info = document.createElement("div");
+        info.style.display = "none";
+        info.innerHTML = `
+            <p><strong>ID:</strong> ${m.id}</p>
+            <p><strong>Marca:</strong> ${m.brand}</p>
+            <p><strong>Precio:</strong> ${m.price} €</p>
+        `;
+
+        btn.onclick = () => {
+            info.style.display = info.style.display === "none" ? "block" : "none";
+        };
+
+        div.appendChild(btn);
+        div.appendChild(info);
+        container.appendChild(div);
+    });
+}
+
+// 2️⃣ Árbol de nodos
+function renderTree(mobiles) {
+    let tree = "Catálogo de móviles\n|\n";
+
+    mobiles.forEach(m => {
+        tree += `|__ ${m.name}\n`;
+        tree += `    |__ ID: ${m.id}\n`;
+        tree += `    |__ Marca: ${m.brand}\n`;
+        tree += `    |__ Precio: ${m.price} €\n\n`;
+    });
+
+    document.getElementById("tree").textContent = tree;
+}
+
+// 3️⃣ Texto plano
+function renderText(mobiles) {
+    let text = "";
+
+    mobiles.forEach(m => {
+        text += 
+`ID: ${m.id}
+Nombre: ${m.name}
+Marca: ${m.brand}
+Precio: ${m.price} €
+---------------------------
+`;
+    });
+
+    document.getElementById("text").textContent = text;
+}
+</script>
+
+</body>
+</html>
