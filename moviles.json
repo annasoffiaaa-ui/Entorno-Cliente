@@ -1,0 +1,74 @@
+[
+    {
+        "id": "001057063610885",
+        "name": "Samsung Galaxy S25 Ultra 12 GB + 512 GB móvil libre",
+        "brand": "Samsung",
+        "price": 1197.45
+    },
+    {
+        "id": "001094612301088",
+        "name": "Apple iPhone Air 256GB Negro espacial móvil libre",
+        "brand": "Apple",
+        "price": 999
+    },
+    {
+        "id": "001057063611537",
+        "name": "Samsung Galaxy A56 5G 8GB + 256GB Móvil libre",
+        "brand": "Samsung",
+        "price": 399.15
+    },
+    {
+        "id": "001057063428320",
+        "name": "Xiaomi Redmi Note 14 8GB + 256GB móvil libre",
+        "brand": "XIAOMI",
+        "price": 156.93
+    },
+    {
+        "id": "001094612301112",
+        "name": "Apple iPhone Air 256GB Azul cielo móvil libre",
+        "brand": "Apple",
+        "price": 999
+    },
+    {
+        "id": "001057063610679",
+        "name": "Samsung Galaxy S25 12GB + 256 GB móvil libre",
+        "brand": "Samsung",
+        "price": 799.13
+    },
+    {
+        "id": "001094612201288",
+        "name": "Apple iPhone 16 móvil libre",
+        "brand": "Apple",
+        "price": 769
+    },
+    {
+        "id": "001057063610513",
+        "name": "Xiaomi Redmi Note 14 Pro 5G 8GB + 256GB móvil libre",
+        "brand": "XIAOMI",
+        "price": 231.31
+    },
+    {
+        "id": "001094612301104",
+        "name": "Apple iPhone Air 256GB Dorado claro móvil libre",
+        "brand": "Apple",
+        "price": 999
+    },
+    {
+        "id": "001057063612949",
+        "name": "Google Pixel 10 Pro 16GB + 256GB móvil libre",
+        "brand": "Google",
+        "price": 930.44
+    },
+    {
+        "id": "001057063611867",
+        "name": "Oppo A5 Pro 5G 8GB + 256GB Móvil libre",
+        "brand": "Oppo",
+        "price": 189.99
+    },
+    {
+        "id": "001057063610430",
+        "name": "Xiaomi Redmi Note 14 Pro+ 5G 8GB + 256GB móvil libre",
+        "brand": "XIAOMI",
+        "price": 297.42
+    }
+]
